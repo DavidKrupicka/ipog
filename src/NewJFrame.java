@@ -17,6 +17,7 @@ public class NewJFrame extends javax.swing.JFrame {
     public NewJFrame() {
         initComponents();
         this.vysledek = 0;
+        jButtonAno2.setVisible(false);
     }
 
     /**
@@ -28,15 +29,22 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jOptionPane1 = new javax.swing.JOptionPane();
         jLabelHlavniText = new javax.swing.JLabel();
         jButtonMinus = new javax.swing.JButton();
         jButtonPlus = new javax.swing.JButton();
         jCheckBoxPoDvou = new javax.swing.JCheckBox();
         jSpinnerStep = new javax.swing.JSpinner();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonAno1 = new javax.swing.JButton();
+        jButtonNe = new javax.swing.JButton();
+        jButtonAno2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelHlavniText.setText("0");
+        getContentPane().add(jLabelHlavniText, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 116, -1, -1));
 
         jButtonMinus.setText("-");
         jButtonMinus.addActionListener(new java.awt.event.ActionListener() {
@@ -44,6 +52,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 jButtonMinusActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonMinus, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 148, -1, -1));
 
         jButtonPlus.setText("+");
         jButtonPlus.addActionListener(new java.awt.event.ActionListener() {
@@ -51,48 +60,45 @@ public class NewJFrame extends javax.swing.JFrame {
                 jButtonPlusActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonPlus, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 75, -1, -1));
 
         jCheckBoxPoDvou.setText("po dvou?");
+        getContentPane().add(jCheckBoxPoDvou, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 25, -1, -1));
 
         jSpinnerStep.setMaximumSize(new java.awt.Dimension(10, 10));
+        getContentPane().add(jSpinnerStep, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 26, 105, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButtonPlus)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(jButtonMinus))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addComponent(jLabelHlavniText))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jCheckBoxPoDvou)
-                        .addGap(18, 18, 18)
-                        .addComponent(jSpinnerStep, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(191, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxPoDvou)
-                    .addComponent(jSpinnerStep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(jButtonPlus)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelHlavniText)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonMinus)
-                .addContainerGap(129, Short.MAX_VALUE))
-        );
+        jLabel1.setText("Dokončím počítačovou grafiku?");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 243, -1, -1));
+
+        jButtonAno1.setText("ANO");
+        jButtonAno1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonAno1MouseEntered(evt);
+            }
+        });
+        jButtonAno1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAno1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonAno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 291, -1, -1));
+
+        jButtonNe.setText("NE");
+        jButtonNe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonNe, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 291, -1, -1));
+
+        jButtonAno2.setText("ANO");
+        jButtonAno2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonAno2MouseEntered(evt);
+            }
+        });
+        getContentPane().add(jButtonAno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 291, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,6 +118,24 @@ public class NewJFrame extends javax.swing.JFrame {
             vysledek -= (int) jSpinnerStep.getValue();
         updateValue(); 
     }//GEN-LAST:event_jButtonMinusActionPerformed
+
+    private void jButtonAno1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAno1MouseEntered
+        jButtonAno1.setVisible(false);
+        jButtonAno2.setVisible(true);
+    }//GEN-LAST:event_jButtonAno1MouseEntered
+
+    private void jButtonAno2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAno2MouseEntered
+        jButtonAno1.setVisible(true);
+        jButtonAno2.setVisible(false);
+    }//GEN-LAST:event_jButtonAno2MouseEntered
+
+    private void jButtonNeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNeActionPerformed
+        jOptionPane1.showMessageDialog(this, "To nevadí, pristi rok taky sance");
+    }//GEN-LAST:event_jButtonNeActionPerformed
+
+    private void jButtonAno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAno1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAno1ActionPerformed
      
     private void updateValue(){
        String vypis;
@@ -154,10 +178,15 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAno1;
+    private javax.swing.JButton jButtonAno2;
     private javax.swing.JButton jButtonMinus;
+    private javax.swing.JButton jButtonNe;
     private javax.swing.JButton jButtonPlus;
     private javax.swing.JCheckBox jCheckBoxPoDvou;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelHlavniText;
+    private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JSpinner jSpinnerStep;
     // End of variables declaration//GEN-END:variables
 }
