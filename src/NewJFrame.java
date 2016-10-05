@@ -31,6 +31,8 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabelHlavniText = new javax.swing.JLabel();
         jButtonMinus = new javax.swing.JButton();
         jButtonPlus = new javax.swing.JButton();
+        jCheckBoxPoDvou = new javax.swing.JCheckBox();
+        jSpinnerStep = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,41 +52,64 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jCheckBoxPoDvou.setText("po dvou?");
+
+        jSpinnerStep.setMaximumSize(new java.awt.Dimension(10, 10));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonMinus)
-                    .addComponent(jLabelHlavniText))
-                .addGap(44, 44, 44)
-                .addComponent(jButtonPlus)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButtonPlus)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(jButtonMinus))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabelHlavniText))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jCheckBoxPoDvou)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSpinnerStep, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabelHlavniText)
-                .addGap(86, 86, 86)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonMinus)
-                    .addComponent(jButtonPlus))
-                .addContainerGap(127, Short.MAX_VALUE))
+                    .addComponent(jCheckBoxPoDvou)
+                    .addComponent(jSpinnerStep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(jButtonPlus)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelHlavniText)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonMinus)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlusActionPerformed
-        vysledek++;
+        if(jCheckBoxPoDvou.isSelected())
+            vysledek += 2;
+        else
+            vysledek += (int) jSpinnerStep.getValue();
         updateValue();        
     }//GEN-LAST:event_jButtonPlusActionPerformed
 
     private void jButtonMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMinusActionPerformed
-        vysledek--;
+        if(jCheckBoxPoDvou.isSelected())
+            vysledek -= 2;
+        else
+            vysledek -= (int) jSpinnerStep.getValue();
         updateValue(); 
     }//GEN-LAST:event_jButtonMinusActionPerformed
      
@@ -131,6 +156,8 @@ public class NewJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonMinus;
     private javax.swing.JButton jButtonPlus;
+    private javax.swing.JCheckBox jCheckBoxPoDvou;
     private javax.swing.JLabel jLabelHlavniText;
+    private javax.swing.JSpinner jSpinnerStep;
     // End of variables declaration//GEN-END:variables
 }
